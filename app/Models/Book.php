@@ -9,7 +9,19 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Book extends Model
 {
     use HasFactory;
-
     public $timestamps = false;
+    public function author(): BelongsToMany
 
+    {
+        return $this->belongsToMany(Author::class);
+    }
+
+    use HasFactory;
+    public function order(): HasOne
+    {
+        return $this->hasOne(Order::class);
+    }
 }
+}
+
+

@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Client extends Model
 {
     use HasFactory;
-    
-    public function Order(): HasMany
+
+    public function order(): HasMany
     {
-        return $this->hasMany(order::class);
+        return $this->hasMany(Order::class);
     }
 }
