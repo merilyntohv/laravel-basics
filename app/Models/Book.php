@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Book extends Model
 {
@@ -16,12 +17,12 @@ class Book extends Model
         return $this->belongsToMany(Author::class);
     }
 
-    use HasFactory;
-    public function order(): HasOne
+    public function order(): HasMany
     {
-        return $this->hasOne(Order::class);
+        return $this->hasMany(Order::class);
     }
+
 }
-}
+
 
 

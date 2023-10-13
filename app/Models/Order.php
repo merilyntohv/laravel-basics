@@ -4,14 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 
 class Order extends Model
 {
     use HasFactory;
 
-    public function books(): HasMany
+    public function book(): BelongsTo
     {
-        return $this->hasMany(Book::class);
+        return $this->belongsTo(Book::class);
     }
+    
+    public function client(): BelongsTo
+    {
+        return $this->belongsTo(Client::class);
+    }
+
 }

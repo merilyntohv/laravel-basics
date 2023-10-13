@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +22,11 @@ Route::get('/', function () {
 Route::get('/test', function(){
     dd('tere');
 });
+
+// file -> array -> method
+
+//Route::get('/authors', [AuthorController::class, 'index']);
+
+//route näed terminalis php artisan route:list
+Route::resource('authors', AuthorController::class);
+Route::resource('clients', ClientController::class);
