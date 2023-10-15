@@ -18,6 +18,11 @@ class Client extends Model
 
     public function book(): HasManyThrough
     {
-        return $this->hasManyThrough(Book::class, Order::class, secondKey: 'id', secondLocalKey:'book_id');
+        return $this->hasManyThrough(
+            Book::class,
+            Order::class,
+            secondKey: "id",
+            secondLocalKey: "book_id"
+        );
     }
 }

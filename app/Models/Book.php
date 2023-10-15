@@ -12,7 +12,6 @@ class Book extends Model
     use HasFactory;
     public $timestamps = false;
     public function author(): BelongsToMany
-
     {
         return $this->belongsToMany(Author::class);
     }
@@ -21,8 +20,4 @@ class Book extends Model
     {
         return $this->hasMany(Order::class);
     }
-
 }
-
-
-

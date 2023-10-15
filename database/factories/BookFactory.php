@@ -17,15 +17,15 @@ class BookFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->name(),
-            'release_date' => fake()->year(),
-            'cover_path' => fake()->imageUrl(),
-            'language' => 'Swahili',
-            'summary' => fake()->sentence(20),
-            'price' => fake()->randomFloat(),
-            'stock_saldo' => fake()->randomNumber(),
-            'pages' => fake()->randomNumber(),
-            'type' => 'new'
+            "title" => fake()->name(),
+            "release_date" => fake()->year(),
+            "cover_path" => fake()->imageUrl(),
+            "language" => "Swahili",
+            "summary" => fake()->sentence(20),
+            "price" => fake()->randomFloat(),
+            "stock_saldo" => fake()->randomNumber(),
+            "pages" => fake()->randomNumber(),
+            "type" => "new",
         ];
     }
 }

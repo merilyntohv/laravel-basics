@@ -9,8 +9,8 @@ class BookController extends Controller
 {
     public function index()
     {
-        return view('books.index', [
-            'books' => Book::paginate(20)
+        return view("books.index", [
+            "books" => Book::paginate(20),
         ]);
     }
 }
