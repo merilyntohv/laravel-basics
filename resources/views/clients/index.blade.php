@@ -10,10 +10,15 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <ul>
-                        @foreach ($authors as $author)
+                        @foreach ($clients as $client)
                         <li>
                             <div class="flex border-b justify-between items-center">
-                            <p>{{ $author->first_name }} {{ $author->last_name }}</p>
+                                <div class="flex flex-col ">                                   
+                                <p>{{ $client->first_name }} {{ $client->last_name }}</p>
+                                <p>{{ $client->username }}</p>
+                                <p>{{ $client->email }}</p>
+                                <p>{{ $client->address }}</p>
+                            </div>    
                             <div class="grid grid-cols-2 gap-2 pt-2">
                                 <button>edit</button>
                                 <x-danger-button class="text-red-500">delete</x-danger-button>
@@ -23,7 +28,7 @@
                         @endforeach
                     </ul>
                 </div>
-                {{$authors}}
+                {{$clients}}
             </div>
         </div>
     </div>

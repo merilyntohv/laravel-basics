@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Books') }}
         </h2>
     </x-slot>
 
@@ -10,10 +10,10 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <ul>
-                        @foreach ($authors as $author)
+                        @foreach ($books as $book)
                         <li>
                             <div class="flex border-b justify-between items-center">
-                            <p>{{ $author->first_name }} {{ $author->last_name }}</p>
+                            <p>{{ $book-> title }}</p>
                             <div class="grid grid-cols-2 gap-2 pt-2">
                                 <button>edit</button>
                                 <x-danger-button class="text-red-500">delete</x-danger-button>
@@ -23,7 +23,7 @@
                         @endforeach
                     </ul>
                 </div>
-                {{$authors}}
+                {{$books}}
             </div>
         </div>
     </div>

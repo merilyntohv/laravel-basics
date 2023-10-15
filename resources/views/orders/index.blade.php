@@ -10,12 +10,18 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <ul>
-                        @foreach ($authors as $author)
+                        @foreach ($orders as $order)
                         <li>
                             <div class="flex border-b justify-between items-center">
-                            <p>{{ $author->first_name }} {{ $author->last_name }}</p>
+                            <div class="flex flex-col ">
+                                <p class="font-bold">Delivery address:</p>
+                                <p>{{ $order->delivery_address }}</p>
+                                <p class="font-bold">Order date:</p>
+                                <p>{{ $order->order_date }}</p>
+                                <p class="font-bold">Status:</p>
+                                <p>{{ $order->status }}</p>
+                            </div>    
                             <div class="grid grid-cols-2 gap-2 pt-2">
-                                <button>edit</button>
                                 <x-danger-button class="text-red-500">delete</x-danger-button>
                             </div>
                             </div>
@@ -23,7 +29,7 @@
                         @endforeach
                     </ul>
                 </div>
-                {{$authors}}
+                {{$orders}}
             </div>
         </div>
     </div>
