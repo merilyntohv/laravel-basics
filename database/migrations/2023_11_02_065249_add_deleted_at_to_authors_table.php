@@ -24,6 +24,7 @@ return new class extends Migration
     {
         Schema::table('authors', function (Blueprint $table) {
             $table->dropSoftDeletes();
+            $table->timestamps();
         });
     }
 };
